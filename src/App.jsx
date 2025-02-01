@@ -48,7 +48,7 @@ function App() {
       toast.warning("Please enter a valid email.");
       return;
     }
-     if(!email.trim().includes("@"){
+     if(!email.trim().includes("@")){
        toast.warning("invalid email")
        return 
       }
