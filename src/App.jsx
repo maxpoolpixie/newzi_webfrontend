@@ -48,13 +48,15 @@ function App() {
       toast.warning("Please enter a valid email.");
       return;
     }
+     if(!email.includes("@"){
+       toast.warning("invalid email")
+       return 
+      }
 
     const scriptURL = "https://newzi-backend-w9qj.vercel.app/email";
 
     try {
-      if(!email.includes("@"){
-        return toast.error("invalid email")
-      }
+     
       const response = await fetch(scriptURL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
