@@ -52,7 +52,9 @@ function App() {
     const scriptURL = "https://newzi-backend-w9qj.vercel.app/email";
 
     try {
-      console.log(JSON.stringify({ email }));
+      if(!email.includes("@"){
+        return toast.error("invalid email")
+      }
       const response = await fetch(scriptURL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
